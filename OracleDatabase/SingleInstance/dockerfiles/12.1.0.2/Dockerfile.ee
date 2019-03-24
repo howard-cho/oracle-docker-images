@@ -17,7 +17,7 @@
 # -----------------------
 # Put all downloaded files in the same directory as this Dockerfile
 # Run: 
-#      $ docker build -t oracle/database:12.1.0.2-ee . 
+#      $ docker image build -t oracle/database:12.1.0.2-ee -f Dockerfile.ee .
 #
 # Pull base image
 # ---------------

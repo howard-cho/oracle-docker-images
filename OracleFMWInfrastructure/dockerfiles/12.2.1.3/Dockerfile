@@ -10,7 +10,7 @@
 # -----------------------
 # The Oracle FMW Infrastructure image extends the Oracle WebLogic Infrastructure 12.2.1.3 image, you must first build the Oracle WebLogic Infrastructure image.
 # Run:
-#      $ docker build -f Dockerfile -t oracle/fmw-infrastructure:12.2.1.3
+#      $ docker build -f Dockerfile -t oracle/fmw-infrastructure:12.2.1.3 .
 #
 # IMPORTANT
 # ---------
@@ -70,7 +70,7 @@ RUN cd /u01 && $JAVA_HOME/bin/jar xf /u01/$FMW_PKG && cd - && \
     rm /u01/$FMW_JAR /u01/$FMW_PKG /u01/oraInst.loc /u01/install.file
 
 # Final image stage
-FROM store/oracle/serverjre:8
+FROM oracle/serverjre:8
 ENV ORACLE_HOME=/u01/oracle \
     VOLUME_DIR=/u01/oracle/user_projects \
     PATH=$PATH:/usr/java/default/bin:/u01/oracle/oracle_common/common/bin:/u01/oracle/wlserver/common/bin:/u01/oracle/container-scripts
